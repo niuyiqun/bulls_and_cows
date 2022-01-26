@@ -2,6 +2,7 @@ package com.example.demo.result;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,7 +14,7 @@ import java.util.Map;
 
 
 @Data
-public class Result {
+public class Result implements Serializable {
     private Boolean success;
     private Integer code;
     private String message;
@@ -58,10 +59,6 @@ public class Result {
         return this;
     }
 
-//    public Result data(String map){     //给返回值传入data信息，参数为map
-//        this.setData(map);
-//        return this;
-//    }
 
     public Result data(String key,Object value){    //给返回值传入data信息，参数为键值
         this.data.put(key,value);

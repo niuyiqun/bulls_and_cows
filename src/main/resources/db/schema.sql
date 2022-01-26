@@ -6,8 +6,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `object_oriented`.`score`  (
-    `id` int(11) NOT NULL,
     `userId` varchar(255) NULL,
+    `userName` varchar(255) NULL,
     `score` int(11) NULL,
     PRIMARY KEY (`id`),
     CONSTRAINT `fk` FOREIGN KEY (`userId`) REFERENCES `object_oriented`.`user` (`userId`)

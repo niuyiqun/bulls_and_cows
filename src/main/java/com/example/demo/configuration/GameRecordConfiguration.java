@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class GameRecordConfiguration {
+    
     @Bean
     public GameRecord getGameRecord(){
         return new GameRecord();

@@ -5,6 +5,7 @@ import com.example.demo.result.Result;
 import com.example.demo.service.GameRecordService;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +32,7 @@ public class GameRecordController {
     UserService userService;
 
     @PostMapping("/getRecordByplayCountAndUserId")
+    @CrossOrigin(value = "http://localhost:5000",maxAge = 1800,allowedHeaders = "*")
     public Result getRecordByplayCountAndUserId(String userId){
         int playCount = userService.getPlayCount(userId);
         List<GameRecord> gameRecordList= gameRecordService.getRecordByplayCountAndUserId(userId,playCount);

@@ -23,10 +23,9 @@ public interface GameRecordMapper {
     @Insert("INSERT INTO gameRecord VALUES(#{userId},#{playCount},#{digitGroup},#{right},#{semiRight})")
     int saveGuessRecord(GameRecord gameRecord);
 
-
     //根据用户和次数获取猜测记录
     @Select("SELECT * FROM gameRecord WHERE userId=#{userId} and playCount=#{playCount}")
-    List<GameRecord> getRecordByplayCountAndUserId(String userId, int playCount);
+    List <GameRecord> getRecordByplayCountAndUserId(String userId, int playCount);
 
     //获取单次游戏中的猜测次数，以便计算该用户本次游戏的总分
     @Select("SELECT count(*) FROM gameRecord WHERE userId=#{userId} and playCount=#{playCount}")

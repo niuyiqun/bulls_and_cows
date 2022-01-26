@@ -14,8 +14,8 @@ import java.sql.Timestamp;
 @Data
 public class Score {
 
-    private int id;
     private String userId;
+    private String userName;
     private int score;       //制定一套得分标准    ---根据完全猜中的次数来，设置为最多猜20次吧
     //一共100分，多猜一个扣五分
 //    private Timestamp lastOnlineTime;   //最后一次上线时间
